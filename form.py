@@ -6,7 +6,7 @@ class ContactForm(FlaskForm):
     charityName = StringField('Name', [DataRequired()])
     charityEmail = StringField('Email', [DataRequired()])
     category = SelectField('Category', choices=[('select','Select a category'),
-                                                ('animals', 'Animals Welfare')])
+                                                ('Animals', 'Animals Welfare')])
     tagLine = StringField('Tagline', [DataRequired()])
     mission = StringField('Mission', [DataRequired()])
     charityWebsite = StringField('Charity Website', [DataRequired()])
