@@ -4,9 +4,9 @@ import os
 from queryFunctions import register_nonProfit, GetNextId
 
 
-app = Flask(__name__)
+application = Flask(__name__)
 # methods=['GET', 'POST']
-@app.route('/', methods=['GET', 'POST'])
+@application.route('/', methods=['GET', 'POST'])
 def index():
     form = ContactForm()
     if request.method =='POST':
@@ -24,8 +24,8 @@ def index():
 
 
 SECRET_KEY = os.urandom(32)
-app.config['SECRET_KEY'] = SECRET_KEY
+application.config['SECRET_KEY'] = SECRET_KEY
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run(debug=True)
 
