@@ -6,6 +6,7 @@ from boto3.dynamodb.conditions import Key
 car = CarKeys()
 
 def register_nonProfit(id, name, email, category, tagline, mission, website):
+    #dynamodb_client_local = boto3.client("dynamodb", endpoint_url="http://localhost:8000")
     dynamodb_client_cloud = boto3.client("dynamodb", region_name="us-east-2")
 
     companyInfo = {
@@ -32,6 +33,7 @@ def register_nonProfit(id, name, email, category, tagline, mission, website):
 
 
 def GetNextId(tableName):
+    #dynamodb_client_local = boto3.client("dynamodb", endpoint_url="http://localhost:8000")
     dynamodb_client_cloud = boto3.client("dynamodb", region_name="us-east-2")
 
     lastItem = dynamodb_client_cloud.scan(
