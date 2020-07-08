@@ -74,15 +74,15 @@
             <form action="" method="post" novalidate>
               <div class="form-group">
                   {{form.charityName.label}}
-                  {{ form.charityName(size = 32, class="form-control", placeholder='Charity name goes here...')}}
+                  {{ form.charityName(size = 32, class="form-control", required, placeholder='Charity name goes here...')}}
               </div>
               <div class="form-group">
                   {{form.charityEmail.label}}
-                  {{form.charityEmail(size = 32, class="form-control", placeholder='charity@email.com')}}
+                  {{form.charityEmail(size = 32, class="form-control", type="email", required, placeholder='charity@email.com')}}
               </div>
               <div class="form-group">
                   {{ form.category.label }}
-                  {{ form.category(class="form-control") }}
+                  {{ form.category(class="form-control", required) }}
               </div>
               <div class="form-group">
                   {{form.tagLine.label}}
@@ -90,13 +90,16 @@
               </div>
               <div class="form-group">
                   {{form.mission.label}}
-                  {{form.mission(size = 32, class="form-control", placeholder='Mission Statement...')}}
+                  {{form.mission(size = 32, class="form-control", required, placeholder='Mission Statement...')}}
               </div>
               <div class="url">
                   {{form.charityWebsite.label}}
                   {{form.charityWebsite(size = 32, class="form-control", placeholder='www.example.com')}}
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-primary">Reset</button>
+              </div>
             </form>
           </div>
       </div>
